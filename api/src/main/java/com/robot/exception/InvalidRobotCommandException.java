@@ -6,7 +6,7 @@ package com.robot.exception;
  * @author carlos
  * 
  */
-public class InvalidRobotCommandException extends Exception {
+public class InvalidRobotCommandException extends RobotException {
 	private static final long serialVersionUID = 1L;
 
 	public InvalidRobotCommandException(char givenCommand) {

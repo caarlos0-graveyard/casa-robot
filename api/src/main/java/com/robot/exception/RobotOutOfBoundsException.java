@@ -9,7 +9,7 @@ import com.robot.RobotPosition;
  * @author carlos
  * 
  */
-public class RobotOutOfBoundsException extends Exception {
+public class RobotOutOfBoundsException extends RobotException {
 	private static final long serialVersionUID = 1L;
 
 	public RobotOutOfBoundsException(String givenCommand,
