@@ -12,21 +12,23 @@ import java.util.List;
 public class WindRose {
 	public static List<Character> CARDEAL_POINTS = Arrays.asList('N', 'E', 'S',
 			'W');
-	private char point;
 
-	public WindRose(char point) {
-		this.point = point;
+	public WindRose() {
 	}
 
 	/**
 	 * Return the direct sibling in the specified side.
 	 * 
-	 * @param side
+	 * @param direction
 	 * @return
 	 */
-	public char getSibling(char side) {
-		int index = getNextPosition(side, CARDEAL_POINTS.indexOf(point));
-		return CARDEAL_POINTS.get(fixPositionOverlap(index));
+	public char getSibling(char point, char direction) {
+		return CARDEAL_POINTS.get(fixPositionOverlap(getNextPosition(direction,
+				indexOf(point))));
+	}
+
+	private int indexOf(char point) {
+		return CARDEAL_POINTS.indexOf(point);
 	}
 
 	private int fixPositionOverlap(int index) {
@@ -37,8 +39,8 @@ public class WindRose {
 		return index;
 	}
 
-	private int getNextPosition(char side, int index) {
-		if (side == 'L')
+	private int getNextPosition(char direction, int index) {
+		if (direction == 'L')
 			return index - 1;
 		return index + 1;
 	}

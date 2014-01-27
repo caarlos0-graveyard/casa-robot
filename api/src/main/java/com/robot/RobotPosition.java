@@ -10,11 +10,13 @@ public class RobotPosition {
 	private int x;
 	private int y;
 	private char direction;
+	private final WindRose rose;
 
 	public RobotPosition(int x, int y, char direction) {
 		this.x = x;
 		this.y = y;
 		this.direction = direction;
+		this.rose = new WindRose();
 	}
 
 	/**
@@ -32,7 +34,7 @@ public class RobotPosition {
 	 * @return true if position is valid, false otherwise.
 	 */
 	public boolean isValid() {
-		return isSideValid(x) && isSideValid(y);
+		return isAxisValid(x) && isAxisValid(y);
 	}
 
 	/**
@@ -41,8 +43,7 @@ public class RobotPosition {
 	 * @param side
 	 */
 	public void rotate(char side) {
-		WindRose rose = new WindRose(direction);
-		direction = rose.getSibling(side);
+		direction = rose.getSibling(direction, side);
 	}
 
 	/**
@@ -50,22 +51,37 @@ public class RobotPosition {
 	 */
 	public void forward() {
 		/*
-		 * when its pointed to N or E, increase the axis value by one, in other
-		 * cases decrease by one.
-		 */
-		int amount = "NE".indexOf(direction) > -1 ? 1 : -1;
-		/*
 		 * when its pointed to N or S, change Y by amount, in other cases change
 		 * X.
 		 */
 		if ("NS".indexOf(direction) > -1)
-			y = y + amount;
+			y = y + changeAmount();
 		else
-			x = x + amount;
+			x = x + changeAmount();
 	}
 
-	private boolean isSideValid(int side) {
-		return side < Constants.SIZE && side >= 0;
+	/**
+	 * Calculates the amount of rows to walk
+	 *
+	 * @return 1 or -1
+	 */
+	private int changeAmount() {
+		/*
+		 * when its pointed to N or E, increase the axis value by one, in other
+		 * cases decrease by one.
+		 */
+		return "NE".indexOf(direction) > -1 ? 1 : -1;
+	}
+
+	/**
+	 * checks if the given axis value is valid (< LIMIT && > -1)
+	 *
+	 * @param axis
+	 *            x or y values
+	 * @return true if ok, false otherwise.
+	 */
+	private boolean isAxisValid(int axis) {
+		return axis < Constants.SIZE && axis >= 0;
 	}
 
 	public int getX() {
