@@ -7,8 +7,8 @@ Contains the Robot API (rotation, movimentation, position validation, et al)
 
 ## rest
 
-Contains the REST interface for the given `api`. It will respond to the following
-endpoints:
+Contains the REST interface for the given `api`. It will respond to the
+following endpoints:
 
 #### `POST /{artifactId}/mars/{commands}`
 
