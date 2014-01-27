@@ -38,9 +38,15 @@ public class Robot {
 		return position.toString();
 	}
 
+	/**
+	 * Processes a given Robot Command.
+	 *
+	 * @param command
+	 * @throws InvalidRobotCommandException
+	 */
 	private void process(char command) throws InvalidRobotCommandException {
 		if (command == 'M')
-			position.forward();
+			position.moveForward();
 		else if ("RL".indexOf(command) > -1)
 			position.rotate(command);
 		else
