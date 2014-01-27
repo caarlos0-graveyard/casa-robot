@@ -24,6 +24,7 @@ robotApp.controller('mainController', function($scope, $http) {
 
   $scope.move = function() {
     var command = $scope.command
+    $scope.position = DEFAULT_POSITION
     if (command) {
       command = command.toUpperCase()
       $http({
@@ -33,11 +34,8 @@ robotApp.controller('mainController', function($scope, $http) {
         $scope.position = data.split('').join(',')
         $scope.msg = ''
       }).error(function (data, status, headers, config) {
-        $scope.position = DEFAULT_POSITION
         $scope.msg = data
       })
-    } else {
-      $scope.position = DEFAULT_POSITION
     }
   }
 })
