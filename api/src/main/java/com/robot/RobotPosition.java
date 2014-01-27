@@ -34,25 +34,7 @@ public class RobotPosition {
 	public boolean isValid() {
 		return isSideValid(x) && isSideValid(y);
 	}
-
-	/**
-	 * changes the x value by the specified amount.
-	 * 
-	 * @param amount
-	 */
-	public void changeXBy(int amount) {
-		x = x + amount;
-	}
-
-	/**
-	 * change the y value by the specified amount.
-	 * 
-	 * @param amount
-	 */
-	public void changeYBy(int amount) {
-		y = y + amount;
-	}
-
+	
 	/**
 	 * Rotate 90º in its own axis to the given side
 	 * 
@@ -61,6 +43,17 @@ public class RobotPosition {
 	public void rotate(char side) {
 		WindRose rose = new WindRose(direction);
 		direction = rose.getSibling(side);
+	}
+	
+	/**
+	 * Move one position forward.
+	 */
+	public void forward() {
+		int amount = "NE".indexOf(direction) > -1 ? 1 : -1;
+		if ("NS".indexOf(direction) > -1)
+			y = y + amount;
+		else
+			x = x + amount;
 	}
 
 	private boolean isSideValid(int side) {

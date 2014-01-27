@@ -38,30 +38,6 @@ public class RobotPositionTests {
 	}
 
 	@Test
-	public void it_should_increment_x() {
-		position.changeXBy(1);
-		assertEquals(1, position.getX());
-	}
-
-	@Test
-	public void it_should_increment_y() {
-		position.changeYBy(1);
-		assertEquals(1, position.getY());
-	}
-
-	@Test
-	public void it_should_decrement_x() {
-		position.changeXBy(-1);
-		assertEquals(-1, position.getX());
-	}
-
-	@Test
-	public void it_should_decrement_y() {
-		position.changeYBy(-1);
-		assertEquals(-1, position.getY());
-	}
-
-	@Test
 	public void it_should_rotate_to_left() {
 		position.rotate('L');
 		assertEquals('W', position.getDirection());
@@ -71,5 +47,11 @@ public class RobotPositionTests {
 	public void it_should_rotate_to_right() {
 		position.rotate('R');
 		assertEquals('E', position.getDirection());
+	}
+	
+	@Test
+	public void it_should_move_forward() {
+		position.forward();
+		assertEquals(1, position.getY());
 	}
 }

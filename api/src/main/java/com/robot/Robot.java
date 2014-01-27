@@ -40,19 +40,10 @@ public class Robot {
 
 	private void process(char command) throws InvalidRobotCommandException {
 		if (command == 'M')
-			move();
+			position.forward();
 		else if ("RL".indexOf(command) > -1)
 			position.rotate(command);
 		else
 			throw new InvalidRobotCommandException(command);
-	}
-
-	private void move() {
-		char direction = position.getDirection();
-		int amount = "NE".indexOf(direction) > -1 ? 1 : -1;
-		if ("NS".indexOf(direction) > -1)
-			position.changeYBy(amount);
-		else
-			position.changeXBy(amount);
 	}
 }
