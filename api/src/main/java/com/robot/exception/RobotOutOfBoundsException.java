@@ -14,8 +14,8 @@ public class RobotOutOfBoundsException extends RobotException {
 
 	public RobotOutOfBoundsException(String givenCommand,
 			RobotPosition wrongPosition) {
-		super("The command " + givenCommand
-				+ " couldnt be executed because it will be out of bounds ("
-				+ wrongPosition + ").");
+		super("The command [" + givenCommand
+				+ "] couldn't be executed because it will be out of bounds ("
+				+ wrongPosition.toFormattedString() + ").");
 	}
 }

@@ -83,4 +83,11 @@ public class RobotPosition {
 	public String toString() {
 		return "" + x + y + pointedTo;
 	}
+
+	/**
+	 * @return the position in 0,0,N format
+	 */
+	public String toFormattedString() {
+		return x + "," + y + "," + pointedTo;
+	}
 }
