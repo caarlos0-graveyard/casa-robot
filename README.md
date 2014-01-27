@@ -23,5 +23,10 @@ curl -X POST http://localhost:8080/rest/mars/MML
 Will return `02W` as result.
 
 Possible erros are `RobotOutOfBounds` and `InvalidRobotCommand`.
-    
 
+## web
+
+A (really) simple Angular.js WebApp to give commands to the Robot. The app
+endpoint is [/web](http://localhost:8080/web).
+
+> only works if the `rest` path wasn't changed.
