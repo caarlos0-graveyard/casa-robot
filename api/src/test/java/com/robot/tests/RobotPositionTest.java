@@ -13,7 +13,7 @@ import com.robot.RobotPosition;
  * @author carlos
  * 
  */
-public class RobotPositionTests {
+public class RobotPositionTest {
 
 	private RobotPosition position;
 

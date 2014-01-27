@@ -12,7 +12,7 @@ import com.robot.exception.RobotOutOfBoundsException;
 /**
  * Tests the Robot class.
  */
-public class RobotTests {
+public class RobotTest {
 
 	private Robot robot = null;
 

@@ -12,7 +12,7 @@ import com.robot.WindRose;
  * 
  * @author carlos
  */
-public class WindRoseTests {
+public class WindRoseTest {
 
 	private WindRose rose;
 
