@@ -64,12 +64,12 @@ public class RobotPositionTests {
 	@Test
 	public void it_should_rotate_to_left() {
 		position.rotate('L');
-		assertEquals('W', position.getPointedTo());
+		assertEquals('W', position.getDirection());
 	}
 
 	@Test
 	public void it_should_rotate_to_right() {
 		position.rotate('R');
-		assertEquals('E', position.getPointedTo());
+		assertEquals('E', position.getDirection());
 	}
 }

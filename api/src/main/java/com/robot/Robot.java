@@ -48,7 +48,7 @@ public class Robot {
 	}
 
 	private void move() {
-		char direction = position.getPointedTo();
+		char direction = position.getDirection();
 		int amount = "NE".indexOf(direction) > -1 ? 1 : -1;
 		if ("NS".indexOf(direction) > -1)
 			position.changeYBy(amount);

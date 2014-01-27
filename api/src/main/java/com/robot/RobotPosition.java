@@ -9,12 +9,12 @@ package com.robot;
 public class RobotPosition {
 	private int x;
 	private int y;
-	private char pointedTo;
+	private char direction;
 
-	public RobotPosition(int x, int y, char pointedTo) {
+	public RobotPosition(int x, int y, char direction) {
 		this.x = x;
 		this.y = y;
-		this.pointedTo = pointedTo;
+		this.direction = direction;
 	}
 
 	/**
@@ -59,8 +59,8 @@ public class RobotPosition {
 	 * @param side
 	 */
 	public void rotate(char side) {
-		WindRose rose = new WindRose(pointedTo);
-		pointedTo = rose.getSibling(side);
+		WindRose rose = new WindRose(direction);
+		direction = rose.getSibling(side);
 	}
 
 	private boolean isSideValid(int side) {
@@ -75,19 +75,19 @@ public class RobotPosition {
 		return y;
 	}
 
-	public char getPointedTo() {
-		return pointedTo;
+	public char getDirection() {
+		return direction;
 	}
 
 	@Override
 	public String toString() {
-		return "" + x + y + pointedTo;
+		return "" + x + y + direction;
 	}
 
 	/**
 	 * @return the position in 0,0,N format
 	 */
 	public String toFormattedString() {
-		return x + "," + y + "," + pointedTo;
+		return x + "," + y + "," + direction;
 	}
 }
