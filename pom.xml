@@ -5,7 +5,7 @@
   <artifactId>robot</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>robot</name>
+  <name>CASA Robot</name>
   <modules>
     <module>api</module>
     <module>rest</module>
