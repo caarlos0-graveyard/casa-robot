@@ -34,7 +34,7 @@ public class RobotPosition {
 	public boolean isValid() {
 		return isSideValid(x) && isSideValid(y);
 	}
-	
+
 	/**
 	 * Rotate 90º in its own axis to the given side
 	 * 
@@ -44,12 +44,20 @@ public class RobotPosition {
 		WindRose rose = new WindRose(direction);
 		direction = rose.getSibling(side);
 	}
-	
+
 	/**
 	 * Move one position forward.
 	 */
 	public void forward() {
+		/*
+		 * when its pointed to N or E, increase the axis value by one, in other
+		 * cases decrease by one.
+		 */
 		int amount = "NE".indexOf(direction) > -1 ? 1 : -1;
+		/*
+		 * when its pointed to N or S, change Y by amount, in other cases change
+		 * X.
+		 */
 		if ("NS".indexOf(direction) > -1)
 			y = y + amount;
 		else
