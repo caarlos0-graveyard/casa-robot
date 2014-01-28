@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
+import com.robot.exceptions.RobotExceptionMapper;
 import com.robot.rest.MarsResource;
 
 /**
@@ -17,6 +18,7 @@ public class RobotApplication extends Application {
 	public Set<Class<?>> getClasses() {
 		final Set<Class<?>> classes = new HashSet<Class<?>>();
 		classes.add(MarsResource.class);
+		classes.add(RobotExceptionMapper.class);
 		return classes;
 	}
 }
