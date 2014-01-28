@@ -15,7 +15,7 @@ To get test coverage run `mvn cobertura:cobertura` then check the results in
 Contains the REST interface for the given `api`. It will respond to the
 following endpoints:
 
-##### `POST /{artifactId}/mars/{commands}`
+##### `POST /rest/mars/{commands}`
 
 This will move the Robot from 00N to some position and return it.
 
@@ -33,8 +33,6 @@ Possible erros are `RobotOutOfBounds` and `InvalidRobotCommand`.
 
 A (really) simple Angular.js WebApp to give commands to the Robot. The app
 endpoint is [/web](http://localhost:8080/web).
-
-> only works if the `rest` path wasn't changed.
 
 ### ear
 
