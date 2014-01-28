@@ -5,8 +5,6 @@ ContaAzul Space Agency Robot
 
 Contains the Robot API (rotation, movimentation, position validation, et al)
 
-![coverage](https://github.com/caarlos0/casa-robot/raw/master/coverage.png)
-
 ## rest
 
 Contains the REST interface for the given `api`. It will respond to the
