@@ -14,5 +14,6 @@
     <module>api</module>
     <module>rest</module>
     <module>web</module>
+    <module>ear</module>
   </modules>
 </project>
