@@ -40,7 +40,7 @@ public class Robot {
 
 	/**
 	 * Processes a given Robot Command.
-	 *
+	 * 
 	 * @param command
 	 * @throws InvalidRobotCommandException
 	 */

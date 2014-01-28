@@ -26,7 +26,7 @@ public class WindRose {
 
 	/**
 	 * get the index of a given cardeal point in the CARDEAL_POINTS List.
-	 *
+	 * 
 	 * @param cardealPoint
 	 * @return
 	 */
@@ -38,7 +38,7 @@ public class WindRose {
 	 * Fixes the overlap in the index, i.e., do the loop from the end of the
 	 * WIND_ROSE List back to the beginning and vice-versa, or just return the
 	 * actual index if it doesn't apply.
-	 *
+	 * 
 	 * @param index
 	 *            current index
 	 * @return overlaped index
@@ -54,7 +54,7 @@ public class WindRose {
 	/**
 	 * Given the index to begin from and a side to walk, get the next cardeal
 	 * point.
-	 *
+	 * 
 	 * @param direction
 	 *            L or R, representing Left or Right: the side to walk
 	 * @param index
