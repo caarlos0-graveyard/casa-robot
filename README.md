@@ -5,6 +5,9 @@ ContaAzul Space Agency Robot
 
 Contains the Robot API (rotation, movimentation, position validation, et al)
 
+To get test coverage run `mvn cobertura:cobertura` then check the results in
+`api/target/site/cobertura/index.html`.
+
 ## rest
 
 Contains the REST interface for the given `api`. It will respond to the
