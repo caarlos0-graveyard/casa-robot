@@ -1,7 +1,7 @@
 ContaAzul Space Agency Robot
 ==========
 
-Describing the modules
+Describing the modules:
 
 ### api
 
