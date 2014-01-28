@@ -1,6 +1,7 @@
 package com.robot.exceptions;
 
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
@@ -18,7 +19,8 @@ public class RobotExceptionMapper implements ExceptionMapper<RobotException> {
 
 	@Override
 	public Response toResponse(RobotException exception) {
-		return Response.status(400).entity(exception.getMessage()).build();
+		return Response.status(Status.BAD_REQUEST)
+				.entity(exception.getMessage()).build();
 	}
 
 }

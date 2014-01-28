@@ -3,7 +3,10 @@ package com.robot.rest;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import com.robot.Robot;
 import com.robot.exception.InvalidRobotCommandException;
@@ -16,7 +19,7 @@ import com.robot.exception.RobotOutOfBoundsException;
  * 
  */
 @Path("/mars")
-public class MarsRest {
+public class MarsResource {
 
 	/**
 	 * Moves the according to the given commands.
@@ -30,9 +33,11 @@ public class MarsRest {
 	 *             if the robot walks too much and gets out of the field
 	 */
 	@POST
+	@Produces(MediaType.TEXT_PLAIN)
 	@Path("/{commands}")
 	public Response move(@PathParam("commands") String commands)
 			throws InvalidRobotCommandException, RobotOutOfBoundsException {
-		return Response.status(200).entity(new Robot().move(commands)).build();
+		final String position = new Robot().move(commands);
+		return Response.status(Status.OK).entity(position).build();
 	}
 }
