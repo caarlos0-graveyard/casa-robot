@@ -3,6 +3,7 @@ package com.robot;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 import com.robot.exceptions.RobotExceptionMapper;
@@ -13,6 +14,7 @@ import com.robot.rest.MarsResource;
  * 
  * @author carlos
  */
+@ApplicationPath("/")
 public class RobotApplication extends Application {
 	@Override
 	public Set<Class<?>> getClasses() {
