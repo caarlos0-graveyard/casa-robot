@@ -9,7 +9,15 @@ Having a jBoss AS server up and running:
 mvn clean install && mvn jboss-as:deploy -f ear/pom.xml
 ```
 
-Describing the modules:
+## Cobertura
+
+Take a look at the code coverage:
+
+```sh
+mvn cobertura:cobertura && open api/target/site/cobertura/index.html
+```
+
+## Describing the modules:
 
 ### api
 
