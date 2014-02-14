@@ -1,6 +1,14 @@
 ContaAzul Space Agency Robot
 ==========
 
+## Build and deploy
+
+Having a jBoss AS server up and running:
+
+```sh
+mvn clean install && mvn jboss-as:deploy -f ear/pom.xml
+```
+
 Describing the modules:
 
 ### api
