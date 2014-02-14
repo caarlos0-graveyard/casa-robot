@@ -8,10 +8,32 @@ robotApp.filter('reverse', function() {
   }
 })
 
-robotApp.controller('mainController', function($scope, $http) {
-  $scope.position = DEFAULT_POSITION
-  $scope.msg = ''
+robotApp.service('Robot', function ($http) {
+  this.move = function (command) {
+    command = command.toUpperCase()
+    return $http({
+      method: 'POST',
+      url: SERVICE_URL + command
+    })
+  }
+})
+
+robotApp.controller('mainController', function($scope, $http, Robot) {
+  var processCommand, defaultState;
+  defaultState = function () {
+    $scope.position = DEFAULT_POSITION
+    $scope.msg = ''
+  }
+  processCommand = function (command) {
+    defaultState()
+    Robot.move(command).success(function (data, status, headers, config) {
+      $scope.position = data.split('').join(',')
+    }).error(function (data, status, headers, config) {
+      $scope.msg = data
+    })
+  }
   $scope.array = Array.apply(null, {length: 5}).map(Number.call, Number)
+  defaultState()
 
   $scope.isPosition = function (col, row) {
     var coords = $scope.position.split(',')
@@ -24,18 +46,8 @@ robotApp.controller('mainController', function($scope, $http) {
 
   $scope.move = function() {
     var command = $scope.command
-    $scope.position = DEFAULT_POSITION
-    if (command) {
-      command = command.toUpperCase()
-      $http({
-        method: 'POST',
-        url: SERVICE_URL + command
-      }).success(function (data, status, headers, config) {
-        $scope.position = data.split('').join(',')
-        $scope.msg = ''
-      }).error(function (data, status, headers, config) {
-        $scope.msg = data
-      })
-    }
+    if (!command)
+      return;
+    processCommand(command)
   }
 })
