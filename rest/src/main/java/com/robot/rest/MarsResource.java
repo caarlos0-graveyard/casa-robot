@@ -36,7 +36,7 @@ public class MarsResource {
 	@Produces(MediaType.TEXT_PLAIN)
 	@Path("/{commands}")
 	public Response move(@PathParam("commands") String commands)
-			throws InvalidRobotCommandException, RobotOutOfBoundsException {
+	        throws InvalidRobotCommandException, RobotOutOfBoundsException {
 		final String position = new Robot().move(commands);
 		return Response.status(Status.OK).entity(position).build();
 	}

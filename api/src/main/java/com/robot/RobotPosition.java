@@ -54,15 +54,16 @@ public class RobotPosition {
 		 * when its pointed to N or S, change Y by amount, in other cases change
 		 * X.
 		 */
-		if ("NS".indexOf(direction) > -1)
+		if ("NS".indexOf(direction) > -1) {
 			y = y + amountToChange();
-		else
+		} else {
 			x = x + amountToChange();
+		}
 	}
 
 	/**
 	 * Calculates the amount of rows to walk
-	 *
+	 * 
 	 * @return 1 or -1
 	 */
 	private int amountToChange() {
@@ -75,7 +76,7 @@ public class RobotPosition {
 
 	/**
 	 * checks if the given axis value is valid (< LIMIT && > -1)
-	 *
+	 * 
 	 * @param axis
 	 *            x or y values
 	 * @return true if ok, false otherwise.

@@ -28,13 +28,13 @@ public class Robot {
 	 * @throws RobotOutOfBoundsException
 	 *             if robot gets out of the field
 	 */
-	public String move(String commands) throws InvalidRobotCommandException,
-			RobotOutOfBoundsException {
+	public String move(String commands) {
 		for (char command : commands.toCharArray()) {
 			process(command);
 		}
-		if (!position.isValid())
+		if (!position.isValid()) {
 			throw new RobotOutOfBoundsException(commands, position);
+		}
 		return position.toString();
 	}
 
@@ -44,12 +44,13 @@ public class Robot {
 	 * @param command
 	 * @throws InvalidRobotCommandException
 	 */
-	private void process(char command) throws InvalidRobotCommandException {
-		if (command == 'M')
+	private void process(char command) {
+		if (command == 'M') {
 			position.moveForward();
-		else if ("RL".indexOf(command) > -1)
+		} else if ("RL".indexOf(command) > -1) {
 			position.rotate(command);
-		else
+		} else {
 			throw new InvalidRobotCommandException(command);
+		}
 	}
 }

@@ -14,7 +14,7 @@ import com.robot.tests.WindRoseTest;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses(value = { RobotTest.class, WindRoseTest.class,
-		RobotPositionTest.class })
+        RobotPositionTest.class })
 public class AllRobotTestSuite {
 
 }

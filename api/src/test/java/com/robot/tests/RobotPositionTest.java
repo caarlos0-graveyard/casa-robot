@@ -48,7 +48,7 @@ public class RobotPositionTest {
 		position.rotate('R');
 		assertEquals('E', position.getDirection());
 	}
-	
+
 	@Test
 	public void it_should_move_forward() {
 		position.moveForward();

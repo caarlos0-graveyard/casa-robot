@@ -7,5 +7,5 @@ package com.robot;
  * 
  */
 public interface Constants {
-	static int SIZE = 5;
+	int SIZE = 5;
 }

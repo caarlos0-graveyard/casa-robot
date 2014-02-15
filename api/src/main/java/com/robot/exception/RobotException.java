@@ -6,7 +6,7 @@ package com.robot.exception;
  * @author carlos
  * 
  */
-public abstract class RobotException extends Exception {
+public abstract class RobotException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
 	public RobotException(String msg) {

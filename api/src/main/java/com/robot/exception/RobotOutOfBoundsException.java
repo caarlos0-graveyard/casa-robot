@@ -13,9 +13,9 @@ public class RobotOutOfBoundsException extends RobotException {
 	private static final long serialVersionUID = 1L;
 
 	public RobotOutOfBoundsException(String givenCommand,
-			RobotPosition wrongPosition) {
+	        RobotPosition wrongPosition) {
 		super("The command [" + givenCommand
-				+ "] couldn't be executed because it will be out of bounds ("
-				+ wrongPosition.toFormattedString() + ").");
+		        + "] couldn't be executed because it will be out of bounds ("
+		        + wrongPosition.toFormattedString() + ").");
 	}
 }
