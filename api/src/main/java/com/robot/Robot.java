@@ -33,7 +33,7 @@ public class Robot {
             process(command);
         }
         if (!position.isValid()) {
-            throw new RobotOutOfBoundsException(commands, position);
+        throw new RobotOutOfBoundsException(commands, position);
         }
         return position.toString();
     }
@@ -49,7 +49,7 @@ public class Robot {
             position.moveForward();
         } else if ("RL".indexOf(command) > -1) {
             position.rotate(command);
-        } else {
+   } else {
             throw new InvalidRobotCommandException(command);
         }
     }
