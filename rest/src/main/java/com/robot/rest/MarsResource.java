@@ -21,22 +21,22 @@ import com.robot.exception.RobotOutOfBoundsException;
 @Path("/mars")
 public class MarsResource {
 
-    /**
-     * Moves the according to the given commands.
-     * 
-     * @param commands
-     *            MLR commands
-     * @return the position of robot after moving
-     * @throws InvalidRobotCommandException
-     *             if an invalid command is given
-     * @throws RobotOutOfBoundsException
-     *             if the robot walks too much and gets out of the field
-     */
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Path("/{commands}")
-    public Response move(@PathParam("commands") String commands) {
-        final String position = new Robot().move(commands);
-        return Response.status(Status.OK).entity(position).build();
-    }
+	/**
+	 * Moves the according to the given commands.
+	 * 
+	 * @param commands
+	 *            MLR commands
+	 * @return the position of robot after moving
+	 * @throws InvalidRobotCommandException
+	 *             if an invalid command is given
+	 * @throws RobotOutOfBoundsException
+	 *             if the robot walks too much and gets out of the field
+	 */
+	@POST
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/{commands}")
+	public Response move(@PathParam("commands") String commands) {
+		final String position = new Robot().move( commands );
+		return Response.status( Status.OK ).entity( position ).build();
+	}
 }
