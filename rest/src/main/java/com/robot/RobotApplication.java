@@ -16,11 +16,11 @@ import com.robot.rest.MarsResource;
  */
 @ApplicationPath("/")
 public class RobotApplication extends Application {
-    @Override
-    public Set<Class<?>> getClasses() {
-        final Set<Class<?>> classes = new HashSet<Class<?>>();
-        classes.add(MarsResource.class);
-        classes.add(RobotExceptionMapper.class);
-        return classes;
-    }
+	@Override
+	public Set<Class<?>> getClasses() {
+		final Set<Class<?>> classes = new HashSet<Class<?>>();
+		classes.add( MarsResource.class );
+		classes.add( RobotExceptionMapper.class );
+		return classes;
+	}
 }

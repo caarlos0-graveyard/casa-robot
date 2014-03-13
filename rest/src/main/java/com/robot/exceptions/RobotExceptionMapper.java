@@ -17,10 +17,10 @@ import com.robot.exception.RobotException;
 @Provider
 public class RobotExceptionMapper implements ExceptionMapper<RobotException> {
 
-    @Override
-    public Response toResponse(RobotException exception) {
-        return Response.status(Status.BAD_REQUEST)
-                .entity(exception.getMessage()).build();
-    }
+	@Override
+	public Response toResponse(RobotException exception) {
+		return Response.status( Status.BAD_REQUEST )
+				.entity( exception.getMessage() ).build();
+	}
 
 }
