@@ -7,10 +7,10 @@ package com.robot.exception;
  * 
  */
 public class InvalidRobotCommandException extends RobotException {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public InvalidRobotCommandException(char givenCommand) {
-        super("The command '" + givenCommand
-                + "' is invalid. Must contain only 'M', 'L' and 'R' letters.");
-    }
+	public InvalidRobotCommandException(char givenCommand) {
+		super( "The command '" + givenCommand
+				+ "' is invalid. Must contain only 'M', 'L' and 'R' letters." );
+	}
 }
