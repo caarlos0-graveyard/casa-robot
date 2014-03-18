@@ -10,12 +10,12 @@ import com.robot.RobotPosition;
  * 
  */
 public class RobotOutOfBoundsException extends RobotException {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public RobotOutOfBoundsException(String givenCommand,
-            RobotPosition wrongPosition) {
-        super("The command [" + givenCommand
-                + "] couldn't be executed because it will be out of bounds ("
-                + wrongPosition.toFormattedString() + ").");
-    }
+	public RobotOutOfBoundsException(String givenCommand,
+			RobotPosition wrongPosition) {
+		super( "The command [" + givenCommand
+				+ "] couldn't be executed because it will be out of bounds ("
+				+ wrongPosition.toFormattedString() + ")." );
+	}
 }
