@@ -19,7 +19,8 @@ robotApp.service('Robot', function ($http) {
 })
 
 robotApp.controller('mainController', function($scope, $http, Robot) {
-  var processCommand, defaultState;
+  var processCommand, defaultState, init;
+
   defaultState = function () {
     $scope.position = DEFAULT_POSITION
     $scope.msg = ''
@@ -32,8 +33,10 @@ robotApp.controller('mainController', function($scope, $http, Robot) {
       $scope.msg = data
     })
   }
-  $scope.array = Array.apply(null, {length: 5}).map(Number.call, Number)
-  defaultState()
+  init = function () {
+    $scope.array = Array.apply(null, {length: 5}).map(Number.call, Number)
+    defaultState()
+  }
 
   $scope.isPosition = function (col, row) {
     var coords = $scope.position.split(',')
@@ -50,4 +53,6 @@ robotApp.controller('mainController', function($scope, $http, Robot) {
       return;
     processCommand(command)
   }
+
+  init()
 })

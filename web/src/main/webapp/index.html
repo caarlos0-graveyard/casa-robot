@@ -35,10 +35,10 @@
             ng-class="isPosition(col, row) ? 'active' : ''">
             {{ row }}x{{ col }}
             <span ng-show="isPosition(col, row)">
-              <i class="glyphicon glyphicon-arrow-up" ng-show="isPointingTo('N')"></i>
-              <i class="glyphicon glyphicon-arrow-down" ng-show="isPointingTo('S')"></i>
-              <i class="glyphicon glyphicon-arrow-right" ng-show="isPointingTo('E')"></i>
-              <i class="glyphicon glyphicon-arrow-left" ng-show="isPointingTo('W')"></i>
+              <i class="glyphicon glyphicon-arrow-up" ng-if="isPointingTo('N')"></i>
+              <i class="glyphicon glyphicon-arrow-down" ng-if="isPointingTo('S')"></i>
+              <i class="glyphicon glyphicon-arrow-right" ng-if="isPointingTo('E')"></i>
+              <i class="glyphicon glyphicon-arrow-left" ng-if="isPointingTo('W')"></i>
             </span>
           </td>
         </tr>
