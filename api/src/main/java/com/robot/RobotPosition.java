@@ -49,16 +49,11 @@ public class RobotPosition {
     /**
      * Move one position forward.
      */
-    public void moveForward() {
-        /*
-         * when its pointed to N or S, change Y by amount, in other cases change
-         * X.
-         */
-        if ("NS".indexOf(direction) > -1) {
+    public void forward() {
+        if ("NS".indexOf(direction) > -1)
             y = y + amountToChange();
-        } else {
+        else
             x = x + amountToChange();
-        }
     }
 
     /**
@@ -67,10 +62,6 @@ public class RobotPosition {
      * @return 1 or -1
      */
     private int amountToChange() {
-        /*
-         * when its pointed to N or E, increase the axis value by one, in other
-         * cases decrease by one.
-         */
         return "NE".indexOf(direction) > -1 ? 1 : -1;
     }
 

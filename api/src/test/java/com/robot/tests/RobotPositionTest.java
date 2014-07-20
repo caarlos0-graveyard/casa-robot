@@ -51,7 +51,7 @@ public class RobotPositionTest {
 
     @Test
     public void it_should_move_forward() {
-        position.moveForward();
+        position.forward();
         assertEquals(1, position.getY());
     }
 }

@@ -23,7 +23,7 @@ public class RobotTest {
 
     @Test
     public void it_should_return_the_default_position_when_no_arguments_are_given()
-            throws InvalidRobotCommandException, RobotOutOfBoundsException {
+            throws Exception {
         assertEquals("00N", robot.move(""));
     }
 
